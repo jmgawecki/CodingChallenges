@@ -160,17 +160,41 @@ class StringsTests: XCTestCase {
         XCTAssertEqual(finalString, shouldReturn)
     }
     
+/// Finish challenge number 14 later
+//    func testStringPermutations() {
+//        // Arrange
+//        let stringToCheck       = "abc"
+//        let stringLength        = stringToCheck.count
+//        let possibleVariation   = ["abc", "acb", "bac", "bca", "cab", "cba"]
+//        let lettersArray        = Array(stringToCheck)
+//
+//
+//        // Act
+//
+//        if stringLength == 0 {
+//            XCTFail("String is empty")
+//        }
+//
+//        for i in 0 ..< stringLength {
+//            let left = String(lettersArray[0 ..< i])
+//        }
+//    }
     
-    func testStringPermutations() {
+    
+    func testReverseWordsInStringShouldReturnTrue() {
         // Arrange
-        let stringToCheck = "abc"
-        let possibleVariation = ["abc", "acb", "bac", "bca", "cab", "cba"]
-        let lettersArray = Array(stringToCheck)
+        let stringToCheck   = "Swift Coding Challenges"
+        let shouldReturn    = "tfiwS gnidoC segnellahC"
+        let stringArray     = stringToCheck.components(separatedBy: " ")
         
         
         // Act
-        for letter in lettersArray {
-            
-        }
+        // using String() wrapper is important as it changes reversedStringArray's type from [ReversedCollection<String>] to [String]
+        var reversedStringArray = stringArray.map { String($0.reversed()) }
+        let result = reversedStringArray.joined(separator: " ")
+        
+        
+        // Assert
+        XCTAssertEqual(result, shouldReturn)
     }
 }
