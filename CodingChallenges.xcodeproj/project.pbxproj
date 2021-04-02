@@ -13,8 +13,8 @@
 		EF9DA85126173BD6003DB734 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9DA84F26173BD6003DB734 /* Main.storyboard */; };
 		EF9DA85326173BDD003DB734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF9DA85226173BDD003DB734 /* Assets.xcassets */; };
 		EF9DA85626173BDD003DB734 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF9DA85426173BDD003DB734 /* LaunchScreen.storyboard */; };
-		EF9DA86126173BDD003DB734 /* CodingChallengesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA86026173BDD003DB734 /* CodingChallengesTests.swift */; };
 		EF9DA86C26173BDD003DB734 /* CodingChallengesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA86B26173BDD003DB734 /* CodingChallengesUITests.swift */; };
+		EF9DA88026173CA1003DB734 /* StringsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA87F26173CA1003DB734 /* StringsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +44,11 @@
 		EF9DA85526173BDD003DB734 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF9DA85726173BDD003DB734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF9DA85C26173BDD003DB734 /* CodingChallengesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingChallengesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF9DA86026173BDD003DB734 /* CodingChallengesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingChallengesTests.swift; sourceTree = "<group>"; };
 		EF9DA86226173BDD003DB734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF9DA86726173BDD003DB734 /* CodingChallengesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingChallengesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9DA86B26173BDD003DB734 /* CodingChallengesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingChallengesUITests.swift; sourceTree = "<group>"; };
 		EF9DA86D26173BDD003DB734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF9DA87F26173CA1003DB734 /* StringsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +113,8 @@
 		EF9DA85F26173BDD003DB734 /* CodingChallengesTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF9DA86026173BDD003DB734 /* CodingChallengesTests.swift */,
 				EF9DA86226173BDD003DB734 /* Info.plist */,
+				EF9DA87F26173CA1003DB734 /* StringsTests.swift */,
 			);
 			path = CodingChallengesTests;
 			sourceTree = "<group>";
@@ -198,6 +198,7 @@
 					};
 					EF9DA85B26173BDD003DB734 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 						TestTargetID = EF9DA84526173BD6003DB734;
 					};
 					EF9DA86626173BDD003DB734 = {
@@ -268,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF9DA86126173BDD003DB734 /* CodingChallengesTests.swift in Sources */,
+				EF9DA88026173CA1003DB734 /* StringsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +475,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HHDDYFD2W;
 				INFOPLIST_FILE = CodingChallengesTests/Info.plist;
@@ -485,6 +487,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jmg.CodingChallengesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodingChallenges.app/CodingChallenges";
@@ -496,6 +499,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9HHDDYFD2W;
 				INFOPLIST_FILE = CodingChallengesTests/Info.plist;
