@@ -26,6 +26,8 @@ class NumbersTests: XCTestCase {
 //        }
 //    }
     
+    
+    
     func testFizzBuzz() {
         for index in 0 ..< 100 {
             if index % 15 == 0 {
@@ -39,6 +41,7 @@ class NumbersTests: XCTestCase {
             }
         }
     }
+    
     
     
     func testGeneratingRandomNumber() {
@@ -59,6 +62,7 @@ class NumbersTests: XCTestCase {
     }
     
     
+    
     func testGeneratingRandomNumberUsingUInt32() {
         // Arrange
         let maximum = 15
@@ -73,6 +77,7 @@ class NumbersTests: XCTestCase {
         // we add 1 cause it generates from 0 and does not inlude upper bound. Then we add minimum to add the difference.
         let randomNumber = Int(arc4random_uniform(UInt32(maximum - minimum + 1))) + minimum
     }
+    
     
     
     func test4Power3ShouldGive64() {
@@ -96,6 +101,8 @@ class NumbersTests: XCTestCase {
         XCTAssertEqual(result, shouldReturn)
     }
     
+    
+    
     // dont use temporary variable
     func testSwapTwoNumbers() {
         // Arrange
@@ -115,6 +122,7 @@ class NumbersTests: XCTestCase {
     }
     
     
+    
     // Another approach
     func testSwapTwoNumberWithSwapFunction() {
         // Arrange
@@ -130,6 +138,7 @@ class NumbersTests: XCTestCase {
         XCTAssertEqual(a, 8)
         XCTAssertEqual(b, 3)
     }
+    
     
     
     func testIs13PrimeShouldReturnTrue() {
@@ -150,6 +159,7 @@ class NumbersTests: XCTestCase {
         }
         
     }
+    
     
     
     func testBinaryHavingTwo1sHigherThan12ShouldBe17() {
@@ -176,12 +186,11 @@ class NumbersTests: XCTestCase {
             higherNumber += 1
         }
         
-       
         
         // Assert
-        
         XCTAssertEqual(higherNumber, 17)
     }
+    
     
     
     func testBinaryHavingTwo1sLowerThan12ShouldBe10() {
@@ -216,6 +225,7 @@ class NumbersTests: XCTestCase {
     }
     
     
+    
     func testBinaryReverseIn8Bit4ShouldReturn32() {
         // Arrange
         let number          = 4
@@ -246,6 +256,7 @@ class NumbersTests: XCTestCase {
     }
     
     
+    
     func testStringContainingOnlyNumbersShouldReturnTrue() {
         // Arrange
         let stringToCheck = "0101015454501023"
@@ -260,6 +271,8 @@ class NumbersTests: XCTestCase {
             }
         }
     }
+    
+    
     
     // Another approach
     // That approach will include Arabic numbers any other numbers
@@ -276,6 +289,7 @@ class NumbersTests: XCTestCase {
         // Assert
         XCTAssertNil(nilIfJustDigits)
     }
+    
     
     
     func testSummarisingJustNumbersFromString1a2b3cShouldReturn6() {
@@ -299,35 +313,66 @@ class NumbersTests: XCTestCase {
     }
     
     
-    func testCalculateSquareRootByHand() {
-        // we got 16
-        // its root square is 4
-        // its always going to be less than half of 16 (2 * 2 = 4 -> half is the lowest that can get)
-        
+    ///do it later
+    
+//    func testCalculateSquareRootByHand() {
+//        // we got 16
+//        // its root square is 4
+//        // its always going to be less than half of 16 (2 * 2 = 4 -> half is the lowest that can get)
+//
+//        // Arrange
+//        let numberToCheck   = 16
+//        let shouldReturn    = 4
+//
+//        let highestPossible = numberToCheck / 2
+//        let lowestPossible = 1
+//
+//        let halfOfHalf = (highestPossible / 2)
+//
+//        // Act
+//        if halfOfHalf * halfOfHalf == shouldReturn {
+//            // early Assert
+//            XCTAssertEqual(halfOfHalf * halfOfHalf, shouldReturn)
+////        } else if {
+//        }
+////        while highestPossible > lowestPossible {
+////        }
+//    }
+    
+    func testSubstractWithoutSubstract5From9ShouldBe4() {
         // Arrange
-        let numberToCheck   = 16
+        let number          = 9
+        let substract       = 5
         let shouldReturn    = 4
         
-        let highestPossible = numberToCheck / 2
-        let lowestPossible = 1
+        var result = 0
         
-        let halfOfHalf = (highestPossible / 2)
         
         // Act
-        if halfOfHalf * halfOfHalf == shouldReturn {
-            // early Assert
-            XCTAssertEqual(halfOfHalf * halfOfHalf, shouldReturn)
-        } else if 
-        
-        while highestPossible > lowestPossible {
-            
+        for x in substract ..< 9 {
+            result += 1
         }
         
         
-        
-        
-        
-        
+        // Assert
+        XCTAssertEqual(result, shouldReturn)
     }
     
+    //Another approach
+    func testSubstractWithoutSubstract5From9ShouldBe4Version2() {
+        let number          = 9
+        let substract       = 5
+        let shouldReturn    = 4
+        
+        
+        // Act
+        // In bits format, if the left-most digit is 0, the rest represents negative number
+        // if the most-left is 1, the rest represents positive number
+        // by flipping 64 with ~ operator, you get -65 so you add 1
+        let result = number + (~substract + 1)
+        
+        
+        // Assert
+        XCTAssertEqual(result, shouldReturn)
+    }
 }

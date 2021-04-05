@@ -16,6 +16,11 @@
 		EF9DA86C26173BDD003DB734 /* CodingChallengesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA86B26173BDD003DB734 /* CodingChallengesUITests.swift */; };
 		EF9DA88026173CA1003DB734 /* StringsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA87F26173CA1003DB734 /* StringsTests.swift */; };
 		EF9DA88526176EF6003DB734 /* NumbersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA88426176EF6003DB734 /* NumbersTests.swift */; };
+		EF9DA96E2618CAEE003DB734 /* FilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA96D2618CAEE003DB734 /* FilesTests.swift */; };
+		EF9DA9742618CBCC003DB734 /* PrintLastLinesTests.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EF9DA9732618CBCC003DB734 /* PrintLastLinesTests.rtf */; };
+		EF9DA9792618F688003DB734 /* CollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA9782618F688003DB734 /* CollectionsTests.swift */; };
+		EF9DA9822618F794003DB734 /* Collection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA9812618F794003DB734 /* Collection+Ext.swift */; };
+		EF9DA9962619DD9C003DB734 /* LinkedListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9DA9952619DD9C003DB734 /* LinkedListNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		EF9DA86D26173BDD003DB734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF9DA87F26173CA1003DB734 /* StringsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsTests.swift; sourceTree = "<group>"; };
 		EF9DA88426176EF6003DB734 /* NumbersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTests.swift; sourceTree = "<group>"; };
+		EF9DA96D2618CAEE003DB734 /* FilesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTests.swift; sourceTree = "<group>"; };
+		EF9DA9732618CBCC003DB734 /* PrintLastLinesTests.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = PrintLastLinesTests.rtf; sourceTree = "<group>"; };
+		EF9DA9782618F688003DB734 /* CollectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsTests.swift; sourceTree = "<group>"; };
+		EF9DA9812618F794003DB734 /* Collection+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ext.swift"; sourceTree = "<group>"; };
+		EF9DA9952619DD9C003DB734 /* LinkedListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,9 @@
 		EF9DA84826173BD6003DB734 /* CodingChallenges */ = {
 			isa = PBXGroup;
 			children = (
+				EF9DA9942619DD90003DB734 /* Custom Class */,
+				EF9DA97D2618F788003DB734 /* Extension */,
+				EF9DA9722618CBBD003DB734 /* Files */,
 				EF9DA84926173BD6003DB734 /* AppDelegate.swift */,
 				EF9DA84B26173BD6003DB734 /* SceneDelegate.swift */,
 				EF9DA84D26173BD6003DB734 /* ViewController.swift */,
@@ -118,6 +131,8 @@
 				EF9DA86226173BDD003DB734 /* Info.plist */,
 				EF9DA87F26173CA1003DB734 /* StringsTests.swift */,
 				EF9DA88426176EF6003DB734 /* NumbersTests.swift */,
+				EF9DA96D2618CAEE003DB734 /* FilesTests.swift */,
+				EF9DA9782618F688003DB734 /* CollectionsTests.swift */,
 			);
 			path = CodingChallengesTests;
 			sourceTree = "<group>";
@@ -129,6 +144,30 @@
 				EF9DA86D26173BDD003DB734 /* Info.plist */,
 			);
 			path = CodingChallengesUITests;
+			sourceTree = "<group>";
+		};
+		EF9DA9722618CBBD003DB734 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF9DA9732618CBCC003DB734 /* PrintLastLinesTests.rtf */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		EF9DA97D2618F788003DB734 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EF9DA9812618F794003DB734 /* Collection+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EF9DA9942619DD90003DB734 /* Custom Class */ = {
+			isa = PBXGroup;
+			children = (
+				EF9DA9952619DD9C003DB734 /* LinkedListNode.swift */,
+			);
+			path = "Custom Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9DA9742618CBCC003DB734 /* PrintLastLinesTests.rtf in Resources */,
 				EF9DA85626173BDD003DB734 /* LaunchScreen.storyboard in Resources */,
 				EF9DA85326173BDD003DB734 /* Assets.xcassets in Resources */,
 				EF9DA85126173BD6003DB734 /* Main.storyboard in Resources */,
@@ -264,7 +304,9 @@
 			files = (
 				EF9DA84E26173BD6003DB734 /* ViewController.swift in Sources */,
 				EF9DA84A26173BD6003DB734 /* AppDelegate.swift in Sources */,
+				EF9DA9962619DD9C003DB734 /* LinkedListNode.swift in Sources */,
 				EF9DA84C26173BD6003DB734 /* SceneDelegate.swift in Sources */,
+				EF9DA9822618F794003DB734 /* Collection+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +316,8 @@
 			files = (
 				EF9DA88526176EF6003DB734 /* NumbersTests.swift in Sources */,
 				EF9DA88026173CA1003DB734 /* StringsTests.swift in Sources */,
+				EF9DA96E2618CAEE003DB734 /* FilesTests.swift in Sources */,
+				EF9DA9792618F688003DB734 /* CollectionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
