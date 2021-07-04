@@ -110,10 +110,10 @@ extension Collection where Iterator.Element: Comparable {
         return lowest
     }
     
-    // Shortest solution. Not the most efficient one as it needs to shuffle all places first
-    func recreateMinThirdApproach() -> Iterator.Element? {
-        return self.sorted().first
-    }
+//    // Shortest solution. Not the most efficient one as it needs to shuffle all places first
+//    func recreateMinThirdApproach() -> Iterator.Element? {
+//        return self.sorted().first
+//    }
     
     
     
@@ -144,6 +144,11 @@ extension Collection {
         
         // send back the return value
         return returnValue
+    }
+    
+    
+    func sortWithBubble() {
+        
     }
     
     

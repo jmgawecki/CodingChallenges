@@ -197,4 +197,116 @@ class StringsTests: XCTestCase {
         // Assert
         XCTAssertEqual(result, shouldReturn)
     }
+    
+    
+//    func testRemoveOccurencies() {
+//        let string = "aabbccccccccddadd"
+////        let shouldReturn = "aabbccdda"
+//
+//        let stringArray = Array(string)
+//        var currentChar = stringArray[0]
+//        var counter     = 1
+//        let limit       = 2
+//        var stringToReturn = [Character]()
+//        // we need to check how many times a occurs when perhaps limit is 2 in a row
+//
+//        for index in 0 ..< stringArray.count - 1 {
+//            // if next char is the same, counter ++
+//            print("is currentChar: \(currentChar) == nextChar: \(stringArray[index + 1])")
+//            if currentChar == stringArray[index + 1] {
+//                print("it is")
+//                print("is counter of that char smaller than 3? counter: \(counter)")
+//                if counter < 3 {
+//                    print("it is")
+//                    print("so we append \(currentChar) to our return array")
+//                    stringToReturn.append(currentChar)
+//                    counter += 1
+//                    print("we increase counter to: \(counter)")
+//                } else {
+//                    print("counter its 3: \(counter)")
+//                    print("lets ")
+//                    currentChar = stringArray[index + 1]
+////                    stringToReturn.append(currentChar)
+//                    counter = 1
+//                }
+//            } else {
+//                stringToReturn.append(currentChar)
+//                currentChar = stringArray[index + 1]
+//                counter = 1
+//            }
+//        }
+//
+//        print(stringToReturn)
+//
+//    }
+    
+    
+    func testRemoveOccurencies() {
+        let string          = "aabbccccccccccddadd"
+        var stringArray     = Array(string)
+        stringArray.append(" ")
+        var counter         = 1
+        let limit           = 2
+        var stringToReturn  = ""
+        
+        for index in 0 ..< stringArray.count - 1 {
+            // if current element of the array is exactly the same as next one
+            if stringArray[index] == stringArray[index + 1] {
+                // if current and next are same ones, we check how many did we count already
+                if counter < limit {
+                    counter += 1
+                }
+            } else {
+                // next one its not the same, so now we append
+                for _ in 0 ..< counter {
+                    stringToReturn.append(stringArray[index])
+                }
+                counter = 1
+            }
+        }
+        
+        
+        print(stringToReturn)
+    }
+    
+    
+    func testVowelsAndConsonants() {
+        // Arrange
+        let stringToCheck   = "jakubgawecki"
+        var vowels          = ""
+        var consonants      = ""
+        
+        
+        // Act
+        for char in stringToCheck {
+            if char == "a" || char == "e" || char == "u" || char == "i" || char == "o" || char == "A" || char == "E" || char == "U" || char == "I" || char == "O" {
+                vowels.append(char)
+            } else {
+                consonants.append(char)
+            }
+        }
+        
+        let shouldReturn = (vowels: vowels, consonants: consonants)
+        
+        print(shouldReturn)
+    }
+    
+    
+    func testVowelsAndConsonantsBetterSolution() {
+        // Arrange
+        let stringToCheck   = "jakubGawecki"
+        let vowels          = "AEIOUaeiou"
+        let consonants      = "BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz"
+        
+        
+        // Act
+        let filteredVowels = stringToCheck.filter { vowels.contains($0) }
+        let filteredConsonants = stringToCheck.filter { consonants.contains($0) }
+        let tuple = (vowels: filteredVowels, consonants: filteredConsonants)
+        
+        print(tuple)
+       
+        
+    }
 }
+

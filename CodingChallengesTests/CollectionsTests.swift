@@ -183,4 +183,138 @@ class CollectionsTests: XCTestCase {
     
     
     
+    func testSortWithBubble() {
+        // Arrange
+        let list = [4,3,3,3,5,6,7,8,9,3,1,2,1,1,1]
+        let shouldReturn = [1,1,1,1,2,3,3,3,3,4,5,6,7,8,9]
+        
+        
+        
+        // Act
+        let result = list.sortWithBubble()
+        
+        // Assert
+        XCTAssertEqual(result, shouldReturn)
+    }
+    
+    
+    func testSortWithInsertion() {
+        // Arrange
+        let list = [4,3,3,3,5,6,7,8,9,3,1,2,1,1,1]
+        _ = [1,1,1,1,2,3,3,3,3,4,5,6,7,8,9]
+        var returnValue = [Int]()
+        
+        
+        // Act
+        for unsorted in list {
+            print(returnValue)
+            // when its empty. first try
+            if returnValue.count == 0 {
+                returnValue.append(unsorted)
+            } else {
+                var placed = false
+                
+                for (index, sorted) in returnValue.enumerated() {
+                    if unsorted < sorted {
+                        returnValue.insert(unsorted, at: index)
+                
+                        placed = true
+                        break
+                    }
+                }
+                
+                if !placed {
+                    returnValue.append(unsorted)
+                }
+            }
+        }
+    }
+    
+    
+    func testIsomorphicValues() {
+        // Arrange
+        let first           = "carry"
+        let second          = "baddy"
+        var dictionary      = [Character: Character]()
+        var isIsomorphic    = true
+        
+        
+        let firstStringed   = String(describing: first)
+        let secondStringed  = String(describing: second)
+        
+        let firstAsArray    = Array(firstStringed)
+        let secondAsArray   = Array(secondStringed)
+        
+        
+        // Act
+        // when we swap letters one by one.
+        // Solution is okay when perhaps 2 same letter will be replaced by two other same letters
+        // Solution is okay when same letter is replaced by the same letter
+        if firstAsArray.count == secondAsArray.count {
+            for (index, char) in firstAsArray.enumerated() {
+                // loop over each character
+                let otherCharacter = secondAsArray[index]
+                
+                // Check if there is a Key that we are looking for to compare
+                // If there is, we assign its value to currentMapping
+                if let currentMapping = dictionary[char] {
+                    // Now we know there is a key.
+                    // We need to compare if a value for that key is the same as otherCharacter
+                    if currentMapping != otherCharacter {
+                        // if its not then it means that same letter from a first string, would have two different signs after swapping and that makes is not isomorphic
+                        isIsomorphic = false
+                    }
+                } else {
+                    // now we know that there is no dictionary element with the letter from first array as a key
+                    // but there still can be a value from the other array.
+                    if dictionary.values.contains(otherCharacter) {
+                        // if there is, it means that is assigned to another key, which makes that string not isomorphic
+                        isIsomorphic = false
+                    }
+                    
+                    dictionary[char] = otherCharacter
+                }
+            }
+        }
+        XCTAssertTrue(isIsomorphic)
+    }
+    
+    
+//    func testBalancedBrackets() {
+//        // Arrange
+//        let input               = "[()<()>]"
+//        let validBrackets       = "([{<>}])"
+//        let validCharacterSet   = CharacterSet(charactersIn: validBrackets).inverted
+//        var openingStack        = [Character]()
+//        var closingStack        = [Character]()
+//
+//        // Act
+//        // Check if correct type of characters
+//        guard input.rangeOfCharacter(from: validCharacterSet) == nil else {
+//            return
+//
+//        }
+//
+//        // Check if even number of characters
+//        guard input.count % 2 == 0 else {
+//            return
+//        }
+//
+//
+//        _ = ["(":")", "[":"]", "{":"}", "<":">"]
+//
+//        for bracket in input {
+//            if bracket == "(" || bracket == "[" || bracket == "<" || bracket == "{" {
+//                openingStack.append(bracket)
+//            } else {
+//                closingStack.append(bracket)
+//            }
+//        }
+//
+//        print(openingStack)
+//        print(closingStack)
+//    }
+    
+    
+    
 }

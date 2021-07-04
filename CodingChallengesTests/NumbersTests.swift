@@ -375,4 +375,91 @@ class NumbersTests: XCTestCase {
         // Assert
         XCTAssertEqual(result, shouldReturn)
     }
+    
+    
+    func testShouldReturnMostCommonNumber() {
+        // Arrange
+        let numbersToCheck = [1,2,3,4,4,4,4,4,6,7,1]
+        let shouldReturn = [4]
+        var numberDictionary: [Int: Int] = [:]
+        var result: [Int] = []
+        
+        // Act
+        for number in numbersToCheck {
+            if let count = numberDictionary[number] {
+                numberDictionary[number] = count + 1
+            } else {
+                numberDictionary[number] = 1
+                
+            }
+        }
+        
+        let highestValue = numberDictionary.values.max()
+        
+        for (number, _) in numberDictionary {
+            if numberDictionary[number] == highestValue {
+                result.append(number)
+            }
+        }
+        
+        
+        // Assert
+        XCTAssertEqual(result, shouldReturn)
+    }
+    
+    
+    func testSumTheEvenRepeats() {
+        // Arrange
+        let arrayToCheck    = [1, 2, 2, 3, 3, 4]
+        var dictionary      = [Int : Int]()
+        var resultArray     = [Int]()
+        var result          = 0
+        let shouldReturn    = 5
+        
+        
+        // Act
+        for number in arrayToCheck {
+            if let count = dictionary[number] {
+                dictionary[number] = count + 1
+            } else {
+                dictionary[number] = 1
+            }
+        }
+        
+        print(dictionary)
+        
+        for (number, _) in dictionary {
+            if dictionary[number]! % 2 == 0 {
+                print("\(number) will be added")
+                resultArray.append(number)
+            }
+        }
+        
+        result = resultArray.reduce(0, +)
+        
+        // Assert
+        XCTAssertEqual(result, shouldReturn)
+        
+    }
+    
+    
+//    func testCountTheLargestRange() {
+//        // Arrange
+//        let arrayToCheck = [10, 20, 30, -10, -20, 10, 20]
+//        let shouldReturn = [0 ... 2]
+//        var 
+//        var higherRange  = Int()
+//        
+//        
+//        // Act
+//        for (index, number) in arrayToCheck.enumerated() {
+//            if number > 0 {
+//                longestCount    += 1
+//                higherRange     = index
+//            } else {
+//                
+//            }
+//        }
+//        
+//    }
 }
